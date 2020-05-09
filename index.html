@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PPSoaps | Home</title>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Free online torrent downloading site. Using this users can directly upload the torrent file or pate the torrent Link an start downloading. There is no download limitation for this service. You can add many torrent files according to your bandwidth.">
+    <meta name="keywords" content="Torrent, Webtorrent, WebRTC, Torrent Client">
+    <meta name="author" content="Thorin Arkonshield">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link href="./styles/customr.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+
+<body>
+
+    <header class="mdc-top-app-bar mdc-theme--background">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
+                    aria-label="Open navigation menu">menu</button>
+                <span class="mdc-top-app-bar__title">PPSoaps</span>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="About"
+                    value="Favorite" id='btn-help'>help</button>
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Help"
+                    id='btn-about'>offline_bolt</button>
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Login"
+                    onclick="clickUserCircle()" id='btn-up-login'>account_circle</button>
+            </section>
+        </div>
+    </header>
+    <br>
+    <div class="mdc-layout-grid" style="margin-top: 2% !important;;z-index:1000;">
+        <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell--span-7">
+
+                <div style="padding-top:5% !important">
+                    <h1 class="mdc-typography--headline3">
+                        Online Torrent Downloader
+                    </h1>
+                    <p>
+                        <p class="mdc-typography--subtitle1">Get Torrent Files Instantly!</p>
+
+                        <ol>
+                            <li style="margin-bottom: 5px;">Paste a torrent link or magnet URI from another website</li>
+                            <li style="margin-bottom: 5px;"> Wait a few seconds</li>
+                            <li style="margin-bottom: 5px;">You can Download any torrent file on any device!</li>
+                            <li style="margin-bottom: 5px;">No need to worry about Torrent Dekstop Client!</li>
+                        </ol>
+                    </p>
+                </div>
+
+                <br>
+                <div style="margin-top:18% !important;margin-left:10%">
+                    <h1 class="mdc-typography--headline4">Powered by</h1>
+                    <img src="https://www.stickpng.com/assets/images/58482a75cef1014c0b5e4a15.png" height="20%"
+                        width="10%">
+                    <img src="https://i.ya-webdesign.com/images/vector-javascript-14.png" height="20%" width="10%">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png"
+                        height="20%" width="10%">
+                    <img src="https://webtorrent.io/img/WebTorrent.png" height="20%" width="10%">
+                    <img src="https://miro.medium.com/max/300/1*R4c8lHBHuH5qyqOtZb3h-w.png" height="20%" width="10%">
+                    <img src="https://material.io/resources/icons/static/ic_material_192px_light.svg" height="20%"
+                        width="10%">
+                </div>
+            </div>
+
+            <div class="mdc-layout-grid__cell--span-5">
+
+                <img src='https://cdn.dribbble.com/users/1785652/screenshots/5567114/image.png'
+                    style="z-index: -10000 !important;position: absolute;">
+                <form autocomplete="off"
+                    style="margin-top:1%;padding-top: 24%;z-index: 1 !important; position: absolute;">
+                    <div class="mdc-form-field1">
+                        <label class="mdc-text-field mdc-text-field--outlined">
+                            <input autocomplete="off" type="email" class="mdc-text-field__input"
+                                aria-labelledby="my-label-id" id="email">
+                            <span class="mdc-notched-outline">
+                                <span class="mdc-notched-outline__leading"></span>
+                                <span class="mdc-notched-outline__notch">
+                                    <span class="mdc-floating-label" id="my-email">Email</span>
+                                </span>
+                                <span class="mdc-notched-outline__trailing"></span>
+                            </span>
+                        </label>
+                    </div>
+                    <br>
+                    <div class="mdc-form-field1" style="margin-top:0%;margin-bottom: 1%;">
+                        <label class="mdc-text-field mdc-text-field--outlined ">
+                            <input autocomplete="off" type="password" class="mdc-text-field__input "
+                                aria-labelledby="my-label-id" id="password">
+                            <span class="mdc-notched-outline">
+                                <span class="mdc-notched-outline__leading"></span>
+                                <span class="mdc-notched-outline__notch">
+                                    <span class="mdc-floating-label" id="my-password">Password</span>
+                                </span>
+                                <span class="mdc-notched-outline__trailing"></span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1" />
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none"
+                                        d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        <label for="checkbox-1"><b>Send me PPSoaps News Letters</b></label><br>
+                    </div>
+                    <br>
+                    <button class="mdc-button mdc-button--raised" onclick="emailRegister()" id='btn-register'>
+                        <div class="mdc-button__ripple"></div>
+                        <i class="material-icons mdc-button__icon" aria-hidden="true">bookmark</i>
+                        <span class="mdc-button__label">Register</span>
+                    </button>
+                    or
+                    <button class="mdc-button mdc-button--raised" onclick="emailLogin()" id="btn-login">
+                        <div class="mdc-button__ripple"></div>
+                        <i class="material-icons mdc-button__icon" aria-hidden="true">bookmark</i>
+                        <span class="mdc-button__label">Login</span>
+                    </button>
+                    or
+                    <button class="mdc-button mdc-button--raised" onclick="googleLogin()" id='btn-google-login'>
+                        <div class="mdc-button__ripple"></div>
+                        <i class="material-icons mdc-button__icon" aria-hidden="true">bookmark</i>
+                        <span class="mdc-button__label">Google</span>
+                    </button>
+
+                </form>
+            </div>
+        </div>
+        <div class="mdc-snackbar">
+            <div class="mdc-snackbar__surface">
+                <div class="mdc-snackbar__label" role="status" aria-live="polite" id='snackbar_msg'>
+                    Please Login!
+                </div>
+                <div class="mdc-snackbar__actions">
+                    <button type="button" class="mdc-button mdc-snackbar__action">
+                        <div class="mdc-button__ripple"></div>
+                        <span class="mdc-button__label">OK</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+
+
+        <!-- jQuery 3.4.1 -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyBa9Moy_WHvQm_8CCe6-Ep63xOdMRet09s",
+                authDomain: "torrent-web-client.firebaseapp.com",
+                databaseURL: "https://torrent-web-client.firebaseio.com",
+                projectId: "torrent-web-client",
+                storageBucket: "torrent-web-client.appspot.com",
+                messagingSenderId: "123129523307",
+                appId: "1:123129523307:web:219238d41fda108049952e",
+                measurementId: "G-2S1TJ4J2N3"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+
+            var provider = new firebase.auth.GoogleAuthProvider();
+
+            function googleLogin() {
+                firebase.auth().signInWithPopup(provider).then(function (result) {
+                    // This gives you a Google Access Token. You can use it to access the Google API.
+                    var token = result.credential.accessToken;
+                    // The signed-in user info.
+                    var user = result.user;
+                    // ...
+                    console.log(user);
+
+                    localStorage.setItem('user', JSON.stringify(user))
+                }).catch(function (error) {
+                    // Handle Errors here.
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    // The email of the user's account used.
+                    var email = error.email;
+                    // The firebase.auth.AuthCredential type that was used.
+                    var credential = error.credential;
+                    // ...
+                    showSnackBar(errorMessage)
+                    console.log(error)
+                });
+            }
+
+            function emailLogin() {
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+
+                firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+                    // Handle Errors here.
+
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+
+                    showSnackBar(errorMessage)
+
+                    // ...
+                })
+            }
+
+            function emailRegister() {
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+
+                firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+                    // Handle Errors here.
+
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    showSnackBar(errorMessage)
+
+                    // ...
+                }).then(function () {
+                    //window.location = "./dashboard.html"
+                    console.log("Created!")
+                });
+            }
+
+            function clickUserCircle() {
+                const snackbar = new mdc.snackbar.MDCSnackbar(document.querySelector('.mdc-snackbar'));
+                snackbar.open();
+            }
+
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    // User is signed in.
+                    window.location = "http://127.0.0.1/ppsoaps/dashboard.html"
+                } else {
+                    // No user is signed in.
+                }
+            });
+
+            //Form emittor
+            document.getElementById('email').addEventListener('focus', () => {
+                document.getElementById('my-email').innerHTML = "";
+            })
+
+            if (document.getElementById('email').value != "") {
+                document.getElementById('my-email').innerHTML = "";
+            }
+
+            document.getElementById('email').addEventListener('focusout', () => {
+                if (document.getElementById('email').value == "") {
+                    document.getElementById('my-email').innerHTML = "Email";
+                }
+            })
+
+            document.getElementById('password').addEventListener('focus', () => {
+                document.getElementById('my-password').innerHTML = "";
+            })
+
+            document.getElementById('password').addEventListener('focusout', () => {
+                if (document.getElementById('password').value == "") {
+                    document.getElementById('my-password').innerHTML = "Password";
+                }
+            });
+
+            function showSnackBar(msg) {
+                document.getElementById('snackbar_msg').innerHTML = msg;
+                const snackbar = new mdc.snackbar.MDCSnackbar(document.querySelector('.mdc-snackbar'));
+                snackbar.open();
+            }
+
+        </script>
+
+        <script>
+            tippy('#btn-about', {
+                content: "This is about us!",
+            });
+            tippy('#btn-help', {
+                content: "Click me for help!",
+            });
+
+            tippy('#btn-login', {
+                content: "Login with email & password",
+            });
+
+            tippy('#btn-up-login', {
+                content: "Please login to enter dashboard!",
+            });
+
+            tippy('#btn-google-login', {
+                content: "Login with google",
+            });
+
+            tippy('#btn-register', {
+                content: "Register with email & password!",
+            });
+
+        </script>
+</body>
+
+</html>

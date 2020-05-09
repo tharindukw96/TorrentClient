@@ -1,0 +1,7 @@
+:root{
+    --mdc-theme-primary : black;
+}
+
+::placeholder { /* Firefox, Chrome, Opera */ 
+    color: blue; 
+} 
